@@ -22,8 +22,12 @@
     "strictPropertyInitialization": false,
     "typeRoots": [
       "./node_modules/@types"
-    ]
+    ],
+    "outDir": "./dist" // Specify the output directory for compiled files
   },
+  "include": [
+    "**/*.ts"  // Include all TypeScript files in the root directory
+  ],
   "exclude": [
     "node_modules",
     "cdk.out"
