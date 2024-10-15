@@ -52,15 +52,15 @@ export class ApiStack extends Stack {
         meetingTable.grantReadData(getMeetingsLambda);
         meetingTable.grantReadData(deleteMeetingLambda);
 
-        // API Gateway setup
-        const api = new apigateway.RestApi(this, 'MeetingApi', {
-            restApiName: 'Meeting Service',
-            defaultCorsPreflightOptions: {
-                allowOrigins: apigateway.Cors.ALL_ORIGINS,
-                allowMethods: apigateway.Cors.ALL_METHODS,
-                allowHeaders: ['Content-Type'],
-            },
-        });
+    const api = new apigateway.RestApi(this, 'MeetingApi', {
+        restApiName: 'Meeting Service',
+        defaultCorsPreflightOptions: {
+          allowOrigins: ['http://localhost:3000'], // Replace with your frontend domain if needed
+          allowMethods: ['OPTIONS', 'GET', 'POST', 'DELETE'],
+          allowHeaders: ['Content-Type', 'Authorization'],
+        },
+      });
+      
          // Create an SNS Topic for alerts
          const alarmTopic = new sns.Topic(this, 'AlarmTopic', {
           displayName: 'Lambda Error Notifications',
