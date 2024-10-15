@@ -10,10 +10,6 @@ phases:
     commands:
       - npm run build       # Compile TypeScript
       - npx cdk synth       # Generate CloudFormation templates
-  post_build:
-    commands:
-      - echo Build completed successfully
-
 artifacts:
   files:
     - 'dist/**/*'          # Include compiled files
