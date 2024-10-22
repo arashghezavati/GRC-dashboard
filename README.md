@@ -1,3 +1,16 @@
+# GRC Dashboard
+
+## Overview
+
+The GRC (Governance, Risk, and Compliance) Dashboard is a web application designed to manage meetings, risks, compliance standards, items, and assessments. This application utilizes AWS services such as Lambda, API Gateway, DynamoDB, SQS, and SNS to provide a scalable and efficient backend infrastructure. 
+
+### Features
+
+- **Meeting Management**: Create and retrieve meetings using Lambda functions.
+- **Risk Management**: Create and retrieve risks, perform risk assessments, and manage associated data.
+- **Compliance Tracking**: Create compliance standards and items, manage assessments, and track compliance status.
+- **Notifications**: Receive alerts and notifications via email for Lambda errors using SNS and CloudWatch.
+
 ## Architecture Explanation
 
 The architecture of the GRC Dashboard is designed to efficiently manage governance, risk, and compliance processes. It leverages several AWS services to ensure scalability, reliability, and performance. The architecture is divided into three main components: Meetings, Risks, and Compliance. Each component interacts with dedicated AWS Lambda functions and utilizes DynamoDB for persistent data storage.
